@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .container
+    h1 Project #{project.code} detail
+    div
+      .mb-3
+        label(for="name", class="form-label") Project
+        input(type="text",id="name-input",name="name-input",class="form-control",value="#{project.name}")
+      .mb-3
+        label(for="title", class="form-label") Name
+        input(type="text",id="title-input",name="title-input",class="form-control",value="#{project.title}")
+      .mb-3
+        label(for="description", class="form-label") Description
+        textarea(id="description-input",name="description-input",class="form-control",value="#{project.description}")
+      .row.mb-3
+        .col-6
+          label(for="pros", class="form-label") Pros
+          textarea(id="pros-input",name="pros-input",class="form-control",value="#{project.pros}")
+        .col-6
+          label(for="cons", class="form-label") Cons
+          textarea(id="cons-input",name="cons-input",class="form-control",value="#{project.cons}")
+      div
+        button(class="btn btn-primary",type="button",onclick="updateProject('#{project._id}')") Update
+  script(src="/javascripts/project.js")

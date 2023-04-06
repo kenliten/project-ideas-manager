@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  div.container
+    h1 Projects (#{projects.length})
+    input#search(type="text",onkeyup="filterProjects()",class="form-control",placeholder="Search...")
+    table(class="table table-striped table-hover mt-4")
+      thead
+        tr
+          th(scope="col") #
+          th(scope="col") Name
+          th(scope="col") Project
+          th(scope="col") Actions
+      tbody(id="projects-container")
+
+  script(src="/javascripts/projects.js")

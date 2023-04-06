@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .container
+        h1(class="my-3") Create new project
+        .mb-3
+            label(for="name", class="form-label") Name
+            input(type="text",id="name-input",name="name-input",class="form-control")
+        .mb-3
+            label(for="title", class="form-label") Title
+            input(type="text",id="title-input",name="title-input",class="form-control")
+        .mb-3
+            label(for="description", class="form-label") Description
+            textarea(id="description-input",name="description-input",class="form-control")
+        .row.mb-3
+            .col-6
+                label(for="pros", class="form-label") Pros
+                textarea(id="pros-input",name="pros-input",class="form-control")
+            .col-6
+                label(for="cons", class="form-label") Cons
+                textarea(id="cons-input",name="cons-input",class="form-control")
+        div
+            button(class="btn btn-primary",type="button",onclick="saveProject()") Save
+    script(src="/javascripts/project.js")
